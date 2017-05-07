@@ -1,4 +1,4 @@
-#include "s60-x.h"
+#include "s60_x.h"
 
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
