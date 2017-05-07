@@ -3,7 +3,7 @@
 void matrix_init_kb(void) {
 	// put your keyboard start-up code here
 	// runs once when the firmware starts up
-
+    debug_enable=true;
 	matrix_init_user();
 }
 
@@ -17,6 +17,9 @@ void matrix_scan_kb(void) {
 bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 	// put your per-action keyboard code here
 	// runs for every action, just before processing by the firmware
+    xprintf("Layer: %lu, Default: %lu\n", layer_state, default_layer_state);
+    xprintf("Col: %X, Row: %X, Code: %04X, State: %d\n", record->event.key.col,
+            record->event.key.row, keycode, record->event.pressed);
 
 	return process_record_user(keycode, record);
 }

@@ -13,6 +13,8 @@ void matrix_init_kb(void) {
 void matrix_scan_kb(void) {
 	// put your looping keyboard code here
 	// runs every cycle (a lot)
+    debug_enable=true;
+    debug_config.raw=true;
 	matrix_scan_user();
 };
 
